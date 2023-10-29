@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="spin_btn">Spin</button>
+  <button (click)="spinBtn()" [disabled]="disableBtn" class="spin_btn">{{ spinBtnText }}</button>
   <div class="wheel" #wheel>
     <div class="elements" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
       <img class="img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
@@ -11,7 +11,12 @@
 </div>
 <div style="display: flex; align-items: center; margin-top: 50px;">
   <h1 style="color: white; font-size: 20px; margin-left: 50px;">The wheel stopped at:</h1>
-<div class="random">random elements</div>
+<div class="random"> 
+  <img class="img" *ngIf="randomElement.endsWith('.png'); else text" [src]='randomElement'>
+  <ng-template #text>
+    <h1>{{ randomElement }}</h1>
+  </ng-template>
+</div>
 </div>
 <div class="outside-elements" #outsideElements>
   <div class="outside_elements_box" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
