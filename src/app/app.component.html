@@ -9,3 +9,15 @@
     </div>
   </div>
 </div>
+<div style="display: flex; align-items: center; margin-top: 50px;">
+  <h1 style="color: white; font-size: 20px; margin-left: 50px;">The wheel stopped at:</h1>
+<div class="random">random elements</div>
+</div>
+<div class="outside-elements" #outsideElements>
+  <div class="outside_elements_box" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
+    <img class="img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
+    <ng-template #text>
+      <h1>{{ item }}</h1>
+    </ng-template>
+  </div>
+</div>
