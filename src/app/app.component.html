@@ -1,4 +1,11 @@
 <div class="container">
-  <button class="spin_btn">text</button>
-  <div class="wheel"></div>
+  <button class="spin_btn">Spin</button>
+  <div class="wheel" #wheel>
+    <div class="elements" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
+      <img class="img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
+      <ng-template #text>
+        <h1>{{ item }}</h1>
+      </ng-template>
+    </div>
+  </div>
 </div>
