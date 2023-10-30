@@ -2,6 +2,8 @@
     position: relative;
     width: 400px;
     height: 400px;
+    margin-top: 50px;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,9 +11,11 @@
 
 .spin_btn {
     position: absolute;
+    font-size: 10px;
+    color: #fff;
     width: 60px;
     height: 60px;
-    background: #fff;
+    background: linear-gradient(to left top, rgb(235, 142, 3),yellowgreen);
     border: none;
     outline: none;
     font-weight: bolder;
@@ -22,6 +26,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
+    box-shadow:  0 0 20px 0 rgb(229, 182, 95);
 }
 
 .spin_btn::before {
@@ -30,7 +36,7 @@
     top: -28px;
     width: 20px;
     height: 30px;
-    background-color: #fff;
+    background: linear-gradient(to left top, rgb(242, 152, 16),yellowgreen);
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
 }
 
@@ -49,6 +55,7 @@
 
 .container .wheel .elements {
     position: absolute;
+    color: #fff;
     width: 50%;
     height: 50%;
     background: var(--clr);
@@ -63,16 +70,21 @@
     opacity: .3;
 }
 
-.random {
-    color: white;
-    margin-left: 10px;
-    margin-right: 30px;
+.outside-elements {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 100px;
 }
 
 
 .outside_elements_box {
+    width: 30%;
+    height: 20%;
     background: var(--clr);
     opacity: .3;
+    border-radius: 20px;
     margin-top: 10px;
     padding: 15px;
     display: flex;
@@ -81,6 +93,41 @@
     font-weight: bold;
     color: white;
   }
+
+  .random {
+    color: white;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.random_elements_box {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 50px;
+}
+
+.wheel_random_stop {
+  color: white; 
+  font-size: 20px; 
+  margin-left: 50px;
+}
+
+.random_element_text {
+  font-size: 20px;
+}
+
+.container_outside_elements {
+  display: flex; 
+  justify-content: 
+  space-around; 
+  width: 100%;
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+}
 
   .blink {
     animation: blink 0.4s infinite;
@@ -98,7 +145,95 @@
     }
   }
 
-  .img {
-    width: 30px;
-    height: 30px;
+  @media (max-width: 900px) {
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+    .wheel {
+        box-shadow: 0 0 0 5% white; 
+    }
+    .container .wheel .elements {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background: var(--clr);
+      transform-origin: bottom right;
+      transform: rotate(calc(45deg * var(--i)));
+      clip-path: polygon(0 0, 59% 0, 100% 100%, 0 58%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      opacity: .3;
+    }
+
+    .container_outside_elements {
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+    .wheel {
+        box-shadow: 0 0 0 5% white;
+    }
+    .container .wheel .elements {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background: var(--clr);
+      transform-origin: bottom right;
+      transform: rotate(calc(45deg * var(--i)));
+      clip-path: polygon(0 0, 59% 0, 100% 100%, 0 58%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      opacity: .3;
+    }
+
+    .container_outside_elements {
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+}
+
+
+@media (max-width: 350px) {
+  .container {
+      width: 100%;
+      height: 250px;
+  }
+  .wheel {
+      box-shadow: 0 0 0 5% white; 
+  }
+  .container .wheel .elements {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 59% 0, 100% 100%, 0 58%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    opacity: .3;
+  }
+
+  .container_outside_elements {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
 }
