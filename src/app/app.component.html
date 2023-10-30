@@ -1,7 +1,7 @@
 <div class="random_elements_box">
   <h1 class="wheel_random_stop">The wheel stopped at:</h1>
 <div class="random"> 
-  <img class="img" *ngIf="randomElement.endsWith('.png'); else text" [src]='randomElement'>
+  <img class="random_elements_img" *ngIf="randomElement.endsWith('.png'); else text" [src]='randomElement'>
   <ng-template #text>
     <h1 class="random_element_text">{{ randomElement }}</h1>
   </ng-template>
@@ -14,16 +14,16 @@
     <div class="elements" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
       <img class="img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
       <ng-template #text>
-        <h1>{{ item }}</h1>
+        <h1 class="elements_text">{{ item }}</h1>
       </ng-template>
     </div>
   </div>
 </div>
 <div class="outside-elements" #outsideElements>
   <div class="outside_elements_box" *ngFor="let item of wheelItems; let i = index" [style.--i]="i + 1" [style.--clr]="wheelColors[i]">
-    <img class="img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
+    <img class="outside_img" *ngIf="item.endsWith('.png'); else text" [src]='item'>
     <ng-template #text>
-      <h1>{{ item }}</h1>
+      <h1 class="outside_elements_text">{{ item }}</h1>
     </ng-template>
   </div>
 </div>

@@ -50,7 +50,7 @@
     border-radius: 50%;
     background-color: #333;
     overflow: hidden;
-    box-shadow: 0 0 0 15px white;
+    box-shadow: 0 0 0 15px rgb(250, 242, 242), 0 0 30px 15px rgb(213, 190, 190);
 }
 
 .container .wheel .elements {
@@ -70,6 +70,10 @@
     opacity: .3;
 }
 
+.elements_text {
+  transform: rotate(320deg);
+}
+
 .outside-elements {
   width: 30%;
   display: flex;
@@ -84,14 +88,14 @@
     height: 20%;
     background: var(--clr);
     opacity: .3;
-    border-radius: 20px;
+    border-radius: 60px 0 60px;
     margin-top: 10px;
-    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     color: white;
+    box-shadow: var(--clr) 0px 5px 15px, white 0px 3px 8px;
   }
 
   .random {
@@ -125,6 +129,17 @@
 }
 
 .img {
+  width: 30px;
+  height: 30px;
+  transform: rotate(315deg);
+}
+
+.outside_img {
+  width: 30px;
+  height: 30px;
+}
+
+.random_elements_img {
   width: 30px;
   height: 30px;
 }
@@ -205,13 +220,57 @@
       flex-wrap: wrap;
       padding: 10px;
     }
+
+    .outside_elements_text {
+      font-size: 20px;
+    }
+
+    .img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .outside_img {
+      width: 20px;
+      height: 20px;
+    }
 }
 
 
 @media (max-width: 350px) {
   .container {
-      width: 100%;
+      width: 250px;
       height: 250px;
+  }
+  .wheel {
+      box-shadow: 0 0 0 5% white; 
+  }
+  .container .wheel .elements {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 59% 0, 100% 100%, 0 58%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    opacity: .3;
+  }
+
+  .container_outside_elements {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+      width: 200px;
+      height: 200px;
   }
   .wheel {
       box-shadow: 0 0 0 5% white; 
