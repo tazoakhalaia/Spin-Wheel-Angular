@@ -2,7 +2,6 @@
 
 # Compiled output
 /dist
-dist/spin-wheel/
 /tmp
 /out-tsc
 /bazel-out
