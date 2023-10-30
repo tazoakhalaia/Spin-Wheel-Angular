@@ -34,7 +34,6 @@ export class AppComponent {
   
       this.spinBtnText = 'Spinning';
       this.randomElement = '';
-  
 
       this.randomElement = `${chosenElement}`
       this.renderer.setStyle(this.wheel.nativeElement, 'transition', 'none');
@@ -60,7 +59,6 @@ export class AppComponent {
           this.spinning = true;
         }, 4000);
       }, 8000);
-      
   }
 }
 }
