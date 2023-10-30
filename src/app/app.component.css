@@ -71,7 +71,8 @@
 }
 
 .elements_text {
-  transform: rotate(320deg);
+  transform: rotate(315deg);
+  font-size: 20px;
 }
 
 .outside-elements {
@@ -88,14 +89,19 @@
     height: 20%;
     background: var(--clr);
     opacity: .3;
-    border-radius: 60px 0 60px;
+    border-radius: 5px;
     margin-top: 10px;
+    padding: 0 25px 0 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     color: white;
     box-shadow: var(--clr) 0px 5px 15px, white 0px 3px 8px;
+  }
+
+  .outside_elements_text {
+    font-size: 25px;
   }
 
   .random {
@@ -114,6 +120,7 @@
 .wheel_random_stop {
   color: white; 
   font-size: 20px; 
+  font-style: oblique;
   margin-left: 50px;
 }
 
@@ -294,5 +301,18 @@
   .container_outside_elements {
     flex-wrap: wrap;
     padding: 10px;
+  }
+
+  .wheel_random_stop {
+    font-size: 15px;
+  }
+
+  .random_element_text {
+    font-size: 15px;
+  }
+
+  .random_elements_img {
+    width: 15px;
+    height: 15px;
   }
 }

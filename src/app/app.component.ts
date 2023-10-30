@@ -7,16 +7,16 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   wheelItems = [
-    "1",
+    "20",
     "assets/gift.png", 
-    "5",
+    "50",
     "assets/prize.png", 
-    "6", 
+    "100", 
     "assets/star.png", 
-    "7", 
+    "500", 
     "assets/treasure.png"
   ];
-  wheelColors = ['#ff1aff', '#1fa718', '#ffb61a', '#1aff81', '#d1ff1a', '#fc5800', '#1a76ff', '#aef106'];
+  wheelColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#800080', '#FFA500', '#FFC0CB', '#40E0D0'];
   spinning = true;
   disableBtn = false;
   spinBtnText = "Spin";
